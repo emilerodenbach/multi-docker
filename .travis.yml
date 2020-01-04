@@ -6,7 +6,7 @@ before_install:
   - docker build -t emilerodenbach/react-test -f ./client/Dockerfile.dev ./client
 
 scripts:
-  - travis_wait 30 docker run emilerodenbach/react-test npm test -- --coverage
+  - travis_wait 30 docker run emilerodenbach/react-test CI=true npm test -- --coverage
 
 after_success:
   - docker build -t emilerodenbach/multi-client ./client
