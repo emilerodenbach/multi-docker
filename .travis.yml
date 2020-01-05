@@ -16,10 +16,10 @@ after_success:
  # Login to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # Take those images and push them to docker hub    
-  - docker push -t emilerodenbach/multi-client
-  - docker push -t emilerodenbach/multi-nginx
-  - docker push -t emilerodenbach/multi-server
-  - docker push -t emilerodenbach/multi-worker
+  - docker push emilerodenbach/multi-client
+  - docker push emilerodenbach/multi-nginx
+  - docker push emilerodenbach/multi-server
+  - docker push emilerodenbach/multi-worker
 
 deploy:
   edge: true
